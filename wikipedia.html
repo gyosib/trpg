@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+	<title>Wikitest</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<input type="text" id="inputtxt" />
+	<input type="button" id="wikibutton" value='Wikipedia'></button>
+	<!-- <input type="button" id="picbutton" value='Picture'></button> -->
+	<!-- <input type="button" id="okbutton" value='Wikipedia'></button> -->
+<script type="text/javascript">
+$(function(){
+	$('#wikibutton').click(function(){
+		text = $('#inputtxt').val();
+		$('#text').val("");
+		$.ajax({
+			url: 'http://wikipedia.simpleapi.net/api',
+			data: {
+				output: 'json',
+				keyword: text
+			},
+			type: 'GET',
+			cache: false,
+			dataType: 'jsonp',
+			success: function(data){
+				alert(data[0].body.replace(/<br\/>/g,"\n"));
+			},
+			error: function(data){
+				alert('項目を検索できませんでした');
+			}
+		});
+	});
+
+	$('#picbutton').click(function(){
+		text = $('#inputtxt').val();
+		var accountKey = "Basic WQLagn0CxUiCz4ZCQFuzWDch7I7hPoasMn4njfIQmrI";
+		var accountKeyEncoded = base64_encode(":" + accountKey);
+		$('#text').val("");
+		$.ajax({
+			url: 'http://api.bing.net/json.aspx',
+			jsonp: "JsonCallback",
+			beforeSend: function(xhr){
+				xhr.setRequestHeader('Authorization', "Basic " + accountKeyEncoded);
+			},
+			data: {
+				Version: "2.2",
+				Market: "ja-JP",
+				Query: text,
+				Sources: "Web",
+				"Web.Count": 10,
+				"Web.Offset": 0,
+				JsonType: "callback" // ← JSONP 形式の結果を指定
+			},
+			type: 'GET',
+			cache: false,
+			dataType: 'jsonp',
+			success: function(data){
+				console.log(data);
+			},
+			error: function(data){
+				alert('項目を検索できませんでした');
+			}
+		});
+	});
+});
+</script>
+</body>
+</html>
