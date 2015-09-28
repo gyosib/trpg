@@ -2,6 +2,7 @@
 <head>
 	<title>Wikitest</title>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="jquery-cookie-master/src/jquery.cookie.js"></script>
 </head>
 <body>
 	<input type="text" id="inputtxt" />
@@ -10,9 +11,15 @@
 	<!-- <input type="button" id="okbutton" value='Wikipedia'></button> -->
 <script type="text/javascript">
 $(function(){
+	var word = "";
+	if($.cookie('word')){
+		console.log("test");
+		$('#text').val($.cookie('word'));
+	}
 	$('#wikibutton').click(function(){
 		text = $('#inputtxt').val();
-		$('#text').val("");
+		$.cookie('word',text,{expires:7,path:"/"});
+		console.log($.cookie('word'));
 		$.ajax({
 			url: 'http://wikipedia.simpleapi.net/api',
 			data: {
