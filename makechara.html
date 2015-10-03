@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8" />
 	<title>20sec</title>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	  	<script type="text/javascript" src="csvreader.js"></script>
 	<link href="tablebtns.css" rel="stylesheet" type="text/css">
 </head>
 <style>
@@ -27,19 +29,19 @@
 	<div id="skill" class="parentcontainer">
 		<li>スキル</li>
 		<div class="inlineparent">
-			<a id="skill_roll_1" class="inlinebtn"><p>ROLL</p></a>
+			<a id="skill_roll_1" class="inlinebtn" href="javascript:getCSVFile(0)"><p>ROLL</p></a>
 			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
 		</div>
 		<div class="inlineparent">
-			<a id="skill_roll_2" class="inlinebtn"><p>ROLL</p></a>
+			<a id="skill_roll_2" class="inlinebtn" href="javascript:getCSVFile(1)"><p>ROLL</p></a>
 			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
 		</div>
-		<div id="skill_roll_3" class="inlineparent">
-			<a class="inlinebtn"><p>ROLL</p></a>
+		<div  class="inlineparent">
+			<a id="skill_roll_3" class="inlinebtn" href="javascript:getCSVFile(2)"><p>ROLL</p></a>
 			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
@@ -48,19 +50,19 @@
 	<div id="keyword" class="parentcontainer">
 		<li>キーワード</li>
 		<div class="inlineparent">
-			<a id="keyword_roll_1" class="inlinebtn"><p>ROLL</p></a>
+			<a id="keyword_roll_1" class="inlinebtn" href="javascript:getCSVFile(3)"><p>ROLL</p></a>
 			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
 		</div>
 		<div class="inlineparent">
-			<a id="keyword_roll_2" class="inlinebtn"><p>ROLL</p></a>
+			<a id="keyword_roll_2" class="inlinebtn" href="javascript:getCSVFile(4)"><p>ROLL</p></a>
 			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
 		</div>
 		<div class="inlineparent">
-			<a id="keyword_roll_3" class="inlinebtn"><p>ROLL</p></a>
+			<a id="keyword_roll_3" class="inlinebtn" href="javascript:getCSVFile(5)"><p>ROLL</p></a>
 			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
 			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>

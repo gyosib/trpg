@@ -5,14 +5,34 @@ function getCSVFile(csvNO) {
     	createArray(xhr.responseText,csvNO);
 	};
 	//使用するファイル名に変更する
-	if(csvNO == 0){
-		xhr.open("get","dic/Noun.csv", true);
-		xhr.send(null);
-	}
-	if(csvNO == 1){
-		xhr.open("get","dic/Noun.csv", true);
-		xhr.send(null);
-	}
+    switch (csvNO) {
+        case 0:
+            xhr.open("get","dic/Noun.csv", true);
+            xhr.send(null);
+            break;
+        case 1:
+            xhr.open("get","dic/Noun.csv", true);
+            xhr.send(null);
+            break;
+        case 2:
+            xhr.open("get","dic/Noun.csv", true);
+            xhr.send(null);
+            break;
+        case 3:
+            xhr.open("get","dic/Noun.csv", true);
+            xhr.send(null);
+            break;
+        case 4:
+            xhr.open("get","dic/Noun.csv", true);
+            xhr.send(null);
+            break;
+        case 5:
+            xhr.open("get","dic/Noun.csv", true);
+            xhr.send(null);
+            break;
+        default:
+
+    }
 }
 
 function createXMLHttpRequest() {
@@ -29,10 +49,26 @@ function createArray(csvData,csvNO) {
     }
 	var j = 0;
 	j = Math.floor( Math.random() * tempArray.length )
-	if(csvNO == 0){
-		document.getElementById("rand0").innerHTML = csvArray[j][0];
-	}
-	else if(csvNO == 1){
-		document.getElementById("rand1").innerHTML = csvArray[j][0];
-	}
+    switch (csvNO) {
+        case 0:
+            document.getElementById("skill_roll_1").innerHTML = csvArray[j][0];
+            break;
+        case 1:
+            document.getElementById("skill_roll_2").innerHTML = csvArray[j][0];
+            break;
+        case 2:
+            document.getElementById("skill_roll_3").innerHTML = csvArray[j][0];
+            break;
+        case 3:
+            document.getElementById("keyword_roll_1").innerHTML = csvArray[j][0];
+            break;
+        case 4:
+            document.getElementById("keyword_roll_2").innerHTML = csvArray[j][0];
+            break;
+        case 5:
+            document.getElementById("keyword_roll_3").innerHTML = csvArray[j][0];
+            break;
+        default:
+    }
+
 }
