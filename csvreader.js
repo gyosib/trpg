@@ -1,7 +1,7 @@
 $(function(){
 	var myid = $(this).attr("id");
 	$('.inlinebtn').live("click",function(){
-		getCSVFile(0,myid));
+		getCSVFile(0,myid);
 	});
 });
 
