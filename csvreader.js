@@ -6,7 +6,7 @@ $(function(){
 
 	$('.inlinelink').on("click",function(){
 		var myid = $(this).attr("id");
-		var textid = myid + "_text";
+		var textid = myid - "wiki" + "_text";
 		var text = $('#'+textid).val()
 		console.log($(this))
 	});
