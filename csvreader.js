@@ -1,8 +1,11 @@
 $(function(){
-	$('.inlinebtn').live("tap",getCSVFile(0));
+	var myid = $(this).attr("id");
+	$('.inlinebtn').live("click",function(){
+		getCSVFile(0,myid));
+	});
 });
 
-function getCSVFile(csvNO) {
+function getCSVFile(csvNO,myid) {
     var xhr = new XMLHttpRequest();
     xhr.onload = function() {
     	createArray(xhr.responseText,csvNO,myid);
