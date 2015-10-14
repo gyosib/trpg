@@ -1,7 +1,11 @@
+$(function(){
+	$('.inlinebtn').live("tap",getCSVFile(0));
+});
+
 function getCSVFile(csvNO) {
     var xhr = new XMLHttpRequest();
     xhr.onload = function() {
-    	createArray(xhr.responseText,csvNO);
+    	createArray(xhr.responseText,csvNO,myid);
 	};
 	//使用するファイル名に変更する
     switch (csvNO) {
@@ -40,34 +44,14 @@ function createXMLHttpRequest() {
     return XMLhttpObject;
 }
 
-function createArray(csvData,csvNO) {
+function createArray(csvData,csvNO,myid) {
     var tempArray = csvData.split("\n");
     var csvArray = new Array();
+	var textid = myid + "_text";
     for(var i = 0; i<tempArray.length;i++){
 		csvArray[i] = tempArray[i].split(",");
     }
 	var j = 0;
 	j = Math.floor( Math.random() * tempArray.length )
-    switch (csvNO) {
-        case 0:
-            document.getElementById("skill_roll_1").innerHTML = csvArray[j][0];
-            break;
-        case 1:
-            document.getElementById("skill_roll_2").innerHTML = csvArray[j][0];
-            break;
-        case 2:
-            document.getElementById("skill_roll_3").innerHTML = csvArray[j][0];
-            break;
-        case 3:
-            document.getElementById("keyword_roll_1").innerHTML = csvArray[j][0];
-            break;
-        case 4:
-            document.getElementById("keyword_roll_2").innerHTML = csvArray[j][0];
-            break;
-        case 5:
-            document.getElementById("keyword_roll_3").innerHTML = csvArray[j][0];
-            break;
-        default:
-    }
-
+	$('#'+textid).val(csvArray[j][0]);
 }
