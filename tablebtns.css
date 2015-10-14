@@ -17,11 +17,16 @@ html,body {
 	margin: 0%;
 }
 
+.inlinetxt {
+	width:75%;
+	font-size: 40px;
+}
+
 .inlinebtn {
 	/*display : table-cell;*/
 	background-color: #afeeee;
 	vertical-align : middle;
-	width:85%;
+	width:10%;
 	margin-right: 0px;
 }
 
