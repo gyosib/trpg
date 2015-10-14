@@ -1,7 +1,14 @@
 $(function(){
-	var myid = $(this).attr("id");
-	$('.inlinebtn').live("click",function(){
+	$('.inlinebtn').on("click",function(){
+		var myid = $(this).attr("id");
 		getCSVFile(0,myid);
+	});
+
+	$('.inlinelink').on("click",function(){
+		var myid = $(this).attr("id");
+		var textid = myid + "_text";
+		var text = $('#'+textid).val()
+		console.log($(this))
 	});
 });
 
@@ -50,11 +57,35 @@ function createXMLHttpRequest() {
 function createArray(csvData,csvNO,myid) {
     var tempArray = csvData.split("\n");
     var csvArray = new Array();
-	var textid = myid + "_text";
+    var textid = myid + "_text";
     for(var i = 0; i<tempArray.length;i++){
 		csvArray[i] = tempArray[i].split(",");
     }
 	var j = 0;
 	j = Math.floor( Math.random() * tempArray.length )
 	$('#'+textid).val(csvArray[j][0]);
+}
+
+function getAPI(text){
+	console.log(text);
+	var what;
+	$.cookie('word',text,{expires:7,path:"/"});
+	$.ajax({
+		url: 'http://wikipedia.simpleapi.net/api',
+		data: {
+			output: 'json',
+			keyword: text
+		},
+		type: 'GET',
+		cache: false,
+		dataType: 'jsonp',
+		success: function(data){
+			//alert(data[0].body.replace(/<br\/>/g,"\n"));
+			what = data[0].body.replace(/<br\/>/g,"\n");
+		},
+		error: function(data){
+			alert('項目を検索できませんでした');
+		}
+	});
+	return what;
 }
