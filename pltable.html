@@ -3,41 +3,11 @@
 	<meta charset="UTF-8" />
 	<title>PLtable</title>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="jquery-cookie/src/jquery.cookie.js"></script>
+	<script src="table.js"></script>
 </head>
 <body>
 	<input type="button" id="makechara" value='表を生成'></button>
 	<table id="charatable" border=1></table>
-<script type="text/javascript">
-$(function(){
-	var skill1 = "飛翔";
-	var skill2 = "PC";
-	var skill3 = "遠目";
-	var word1 = "冒険";
-	var word2 = "好奇心";
-	var word3 = "星";
-	var highskill = "天体MAP";
-	var memo = "星が大好き。\n昔から旅をしていて、天体を見ることで自分のいる場所と時間がわかる。";
-	var row = 
-		'<tr>' + 
-		'<td>' + "スキル1" + '</td>' + '<td>' + skill1 + '</td>' +
-		'</tr>' + '<tr>' +
-		'<td>' + "スキル2" + '</td>' + '<td>' + skill2 + '</td>' +
-		'</tr>' + '<tr>' +
-		'<td>' + "スキル3" + '</td>' + '<td>' + skill3 + '</td>' +
-		'</tr>' + '<tr>' +
-		'<td>' + "キーワード1" + '</td>' + '<td>' + word1 + '</td>' +
-		'</tr>' + '<tr>' +
-		'<td>' + "キーワード2" + '</td>' + '<td>' + word2 + '</td>' +
-		'</tr>' + '<tr>' +
-		'<td>' + "キーワード3" + '</td>' + '<td>' + word3 + '</td>' +
-		'</tr>' + '<tr>' +
-		'<td colspan=2>' + memo.replace(/\n/g,"<br>") + '</td>' +
-		'</tr>';
-	$('#makechara').click(function(){
-		$('#charatable').empty();
-		$('#charatable').append(row);
-	});
-});
-</script>
 </body>
 </html>

@@ -3,10 +3,12 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>20min</title>
-	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="jquery-cookie/src/jquery.cookie.js"></script>
 	<script type="text/javascript" src="csvreader.js"></script>
+	<script src="Apprise-v2/apprise-v2.js"></script>
 	<link href="tablebtns.css" rel="stylesheet" type="text/css">
+	<link href="Apprise-v2/apprise-v2.css" rel="stylesheet" type="text/css">
 </head>
 <style>
 	#skill,
@@ -30,48 +32,48 @@
 	<div id="skill" class="parentcontainer">
 		<li>スキル</li>
 		<div class="inlineparent">
-			<input type="text" id="skill_roll_1_text" class="inlinetxt"></input>
-			<a id="skill_roll_1" class="inlinebtn"><p>ROLL</p></a>
-			<a class="inlinelink"><img id="skill_roll_1_wiki" src="candy002.png" width="30" height="30" /></a>
+			<input type="text" id="pl_skill_roll_1_text" class="inlinetxt"></input>
+			<a id="pl_skill_roll_1" class="inlinebtn"><p>ROLL</p></a>
+			<a class="inlinelink" id="skill_roll_1"><img  src="candy002.png" width="30" height="30"/></a>
 		</div>
 		<div class="inlineparent">
-			<input type="text" id="skill_roll_2_text" class="inlinetxt"></input>
-			<a id="skill_roll_2" class="inlinebtn"><p>ROLL</p></a>
-			<a class="inlinelink"><img id="skill_roll_2_wiki" src="candy002.png" width="30" height="30" /></a>
+			<input type="text" id="pl_skill_roll_2_text" class="inlinetxt"></input>
+			<a id="pl_skill_roll_2" class="inlinebtn"><p>ROLL</p></a>
+			<a class="inlinelink" id="skill_roll_2"><img  src="candy002.png" width="30" height="30" /></a>
 		</div>
 		<div  class="inlineparent">
-			<input type="text" id="skill_roll_3_text" class="inlinetxt"></input>
-			<a id="skill_roll_3" class="inlinebtn"><p>ROLL</p></a>
-			<a class="inlinelink"><img id="skill_roll_3_wiki" src="candy002.png" width="30" height="30" /></a>
+			<input type="text" id="pl_skill_roll_3_text" class="inlinetxt"></input>
+			<a id="pl_skill_roll_3" class="inlinebtn"><p>ROLL</p></a>
+			<a class="inlinelink" id="skill_roll_3"><img  src="candy002.png" width="30" height="30" /></a>
 		</div>
 	</div>
 	<div id="keyword" class="parentcontainer">
 		<li>キーワード</li>
 		<div class="inlineparent">
-			<input type="text" id="keyword_roll_1_text" class="inlinetxt"></input>
-			<a id="keyword_roll_1" class="inlinebtn"><p>ROLL</p></a>
-			<a class="inlinelink"><img id="keyword_roll_1_wiki" src="candy002.png" width="30" height="30" /></a>
+			<input type="text" id="pl_keyword_roll_1_text" class="inlinetxt"></input>
+			<a id="pl_keyword_roll_1" class="inlinebtn"><p>ROLL</p></a>
+			<a class="inlinelink" id="keyword_roll_1"><img  src="candy002.png" width="30" height="30" /></a>
 		</div>
 		<div class="inlineparent">
-			<input type="text" id="keyword_roll_2_text" class="inlinetxt"></input>
-			<a id="keyword_roll_2" class="inlinebtn"><p>ROLL</p></a>
-			<a class="inlinelink"><img id="keyword_roll_2_wiki" src="candy002.png" width="30" height="30" /></a>
+			<input type="text" id="pl_keyword_roll_2_text" class="inlinetxt"></input>
+			<a id="pl_keyword_roll_2" class="inlinebtn"><p>ROLL</p></a>
+			<a class="inlinelink" id="keyword_roll_2"><img  src="candy002.png" width="30" height="30" /></a>
 		</div>
 		<div class="inlineparent">
-			<input type="text" id="keyword_roll_3_text" class="inlinetxt"></input>
-			<a id="keyword_roll_3" class="inlinebtn"><p>ROLL</p></a>
-			<a class="inlinelink"><img id="keyword_roll_3_wiki" src="candy002.png" width="30" height="30" /></a>
+			<input type="text" id="pl_keyword_roll_3_text" class="inlinetxt"></input>
+			<a id="pl_keyword_roll_3" class="inlinebtn"><p>ROLL</p></a>
+			<a class="inlinelink" id="keyword_roll_3"><img  src="candy002.png" width="30" height="30" /></a>
 		</div>
 	</div>
 	<div id="deathblow" class="parentcontainer">
 		<li>必殺技</li>
 		<div class="inlineparent">
-			<input type="text" class="inlinetxt"></input>
+			<input id="pl_deathblow_roll_text" type="text" class="inlinetxt"></input>
 		</div>
 	</div>
 	<div id="other" class="parentcontainer">
 		<li>その他</li>
-		<textarea id="otherbox"></textarea>
+		<textarea id="pl_other_roll_text"></textarea>
 	</div>
 	<div id="link" class="parentcontainer">
 		<div class="inlineparent">

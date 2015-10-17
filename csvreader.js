@@ -6,9 +6,25 @@ $(function(){
 
 	$('.inlinelink').on("click",function(){
 		var myid = $(this).attr("id");
-		var textid = myid - "wiki" + "_text";
-		var text = $('#'+textid).val()
-		console.log($(this))
+		var textid = myid + "_text";
+		var text = $('#'+textid).val();
+		getAPI(text);
+	});
+
+	$('#save').on("click",function(){
+		var htmllist = 
+			["pl_skill_roll_1","pl_skill_roll_2","pl_skill_roll_3",
+			"pl_keyword_roll_1","pl_keyword_roll_2",
+			"pl_keyword_roll_3",
+			"pl_deathblow_roll","pl_other_roll"];
+		$.each(htmllist,function(index,val){
+			if($('#'+val+'_text').length){
+				var myid = val;
+				var textid = myid + "_text";
+				var text = $('#'+textid).val();
+				$.cookie(myid,text,{expires:7,path:"/"});
+			}
+		});
 	});
 });
 
@@ -67,7 +83,6 @@ function createArray(csvData,csvNO,myid) {
 }
 
 function getAPI(text){
-	console.log(text);
 	var what;
 	$.cookie('word',text,{expires:7,path:"/"});
 	$.ajax({
@@ -82,10 +97,22 @@ function getAPI(text){
 		success: function(data){
 			//alert(data[0].body.replace(/<br\/>/g,"\n"));
 			what = data[0].body.replace(/<br\/>/g,"\n");
+			var setting = {
+				buttons: {
+				confirm: {
+					action: function(){
+						Apprise('close');
+					},
+					text: 'OK',
+				}
+				},
+				input: false,
+				override: true,
+			};
+			Apprise(what,setting);
 		},
 		error: function(data){
 			alert('項目を検索できませんでした');
 		}
 	});
-	return what;
 }
