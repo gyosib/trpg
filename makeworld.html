@@ -5,6 +5,10 @@
 	<title>20min</title>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<link href="tablebtns.css" rel="stylesheet" type="text/css">
+	<script src="jquery-cookie/src/jquery.cookie.js"></script>
+	<script type="text/javascript" src="csvreader.js"></script>
+	<script src="Apprise-v2/apprise-v2.js"></script>
+	<link href="Apprise-v2/apprise-v2.css" rel="stylesheet" type="text/css">
 </head>
 <style>
 	#time {
@@ -26,34 +30,28 @@
 <body>
 	<div id="time" class="parentcontainer">
 		<li>時代</li>
-		<select id="timeselect" class="select"></select>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
-			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
+			<input type="text" id="world_time_roll_text" class="inlinetxt"></input>
+			<a id="world_time_roll" class="inlinebtn"><p>ROLL</p></a>
+			<a id="world_time_toll" class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 		</div>
 	</div>
 	<br>
 	<div id="place" class="parentcontainer">
 		<li>場所</li>
-		<select id="placelect" class="select"></select>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
-			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
+			<input type="text" id="world_place_roll_text" class="inlinetxt"></input>
+			<a id="world_place_roll" class="inlinebtn"><p>ROLL</p></button>
+			<a id="world_place_roll" class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 		</div>
 	</div>
 	<br>
 	<div id="genre" class="parentcontainer">
 		<li>ジャンル</li>
-		<select id="genreselect" class="select"></select>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
-			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
+			<input type="text" id="world_genre_roll_text" class="inlinetxt"></input>
+			<a id="world_genre_roll" class="inlinebtn"><p>ROLL</p></button>
+			<a id="world_genre_roll" class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 		</div>
 	</div>
 	<br>

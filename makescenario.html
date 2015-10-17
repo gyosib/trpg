@@ -4,7 +4,11 @@
 	<meta charset="UTF-8" />
 	<title>20sec</title>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="jquery-cookie/src/jquery.cookie.js"></script>
+	<script type="text/javascript" src="csvreader.js"></script>
 	<link href="tablebtns.css" rel="stylesheet" type="text/css">
+	<script src="Apprise-v2/apprise-v2.js"></script>
+	<link href="Apprise-v2/apprise-v2.css" rel="stylesheet" type="text/css">
 </head>
 <style>
 	#mode {
@@ -27,50 +31,47 @@
 	}
 </style>
 <body>
-	<div id="mode" class="parentcontainer">
+	<!-- <div id="mode" class="parentcontainer">
 		<li>モード</li>
 		<select id="timeselect" class="select"></select>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
+			<a class="inlinebtn"><p>ROLL</p></a>
 			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 		</div>
 	</div>
-	<br>
+	<br> -->
 	<div id="opening" class="parentcontainer">
 		<li>オープニング</li>
-		<select id="placelect" class="select"></select>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
+			<input type="text" id="scene_opening_roll_text" class="inlinetxt"></input>
+			<a id="scene_opening_roll" class="inlinebtn"><p>ROLL</p></a>
 		</div>
 	</div>
 	<br>
 	<div id="ending" class="parentcontainer">
 		<li>エンディング</li>
-		<select id="placelect" class="select"></select>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
+			<input type="text" id="scene_ending_roll_text" class="inlinetxt"></input>
+			<a id="scene_ending_roll" class="inlinebtn"><p>ROLL</p></a>
 		</div>
 	</div>
 	<br>
 	<div id="keyword" class="parentcontainer">
 		<li>キーワード</li>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
-			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
+			<input type="text" id="scene_keyword_roll_1_text" class="inlinetxt"></input>
+			<a id="scene_keyword_roll_1" class="inlinebtn"><p>ROLL</p></a>
+			<a id="scene_keyword_roll_1" class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 		</div>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
-			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
+			<input type="text" id="scene_keyword_roll_2_text" class="inlinetxt"></input>
+			<a id="scene_keyword_roll_2" class="inlinebtn"><p>ROLL</p></a>
+			<a id="scene_keyword_roll_2" class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 		</div>
 		<div class="inlineparent">
-			<button class="inlinebtn"><p>ROLL</p></button>
-			<a class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy004.png" width="30" height="30" /></a>
-			<a class="inlinelink"><img src="candy007.png" width="30" height="30" /></a>
+			<input type="text" id="scene_keyword_roll_3_text" class="inlinetxt"></input>
+			<a id="scene_keyword_roll_3" class="inlinebtn"><p>ROLL</p></a>
+			<a id="scene_keyword_roll_3" class="inlinelink"><img src="candy002.png" width="30" height="30" /></a>
 		</div>
 	</div>
 	<br>

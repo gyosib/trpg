@@ -7,6 +7,7 @@ $(function(){
 	$('.inlinelink').on("click",function(){
 		var myid = $(this).attr("id");
 		var textid = myid + "_text";
+		console.log(myid);
 		var text = $('#'+textid).val();
 		getAPI(text);
 	});
@@ -16,7 +17,10 @@ $(function(){
 			["pl_skill_roll_1","pl_skill_roll_2","pl_skill_roll_3",
 			"pl_keyword_roll_1","pl_keyword_roll_2",
 			"pl_keyword_roll_3",
-			"pl_deathblow_roll","pl_other_roll"];
+			"pl_deathblow_roll","pl_other_roll",
+			"world_time_roll","world_place_roll","world_genre_roll",			"scene_opening_roll","scene_ending_roll",
+			"scene_keyword_roll_1","scene_keyword_roll_2",
+			"scene_keyword_roll_3"];
 		$.each(htmllist,function(index,val){
 			if($('#'+val+'_text').length){
 				var myid = val;
@@ -112,7 +116,7 @@ function getAPI(text){
 			Apprise(what,setting);
 		},
 		error: function(data){
-			alert('項目を検索できませんでした');
+			console.log(text);
 		}
 	});
 }
