@@ -104,7 +104,7 @@ function createXMLHttpRequest() {
 function createArray(csvData,csvNO,myid) {
     var csvArray = csvData.split("\n");
     var textid = myid + "_text";
-    var j = Math.floor( Math.random() * tempArray.length )
+    var j = Math.floor( Math.random() * csvArray.length )
     $('#'+textid).val(csvArray[j]);
 }
 
@@ -122,7 +122,11 @@ function getAPI(text){
 		dataType: 'jsonp',
 		success: function(data){
 			//alert(data[0].body.replace(/<br\/>/g,"\n"));
-			what = data[0].body.replace(/<br\/>/g,"\n");
+			if(data!=null){
+				what = data[0].body.replace(/<br\/>/g,"\n");
+			}else{
+				what = "Wikipediaに該当する項目はありませんでした。";
+			}
 			var setting = {
 				buttons: {
 				confirm: {
@@ -138,7 +142,20 @@ function getAPI(text){
 			Apprise(what,setting);
 		},
 		error: function(data){
-			console.log(text);
+			what = "Wikipediaにはありませんでした";
+			var setting = {
+				buttons: {
+				confirm: {
+					action: function(){
+						Apprise('close');
+					},
+					text: 'OK',
+				}
+				},
+				input: false,
+				override: true,
+			};
+			Apprise(what,setting);
 		}
 	});
 }
