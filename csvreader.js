@@ -12,6 +12,33 @@ $(function(){
 		getAPI(text);
 	});
 
+	$('#world_time_roll').unbind('click');
+	$('#world_place_roll').unbind('click');
+	$('#world_genre_roll').unbind('click');
+	$('#scene_opening_roll').unbind('click');
+	$('#scene_ending_roll').unbind('click');
+
+	$('#world_time_roll').on("click",function(){
+		var myid = $(this).attr("id");
+		getCSVFile(2,myid);
+	});
+	$('#world_place_roll').on("click",function(){
+		var myid = $(this).attr("id");
+		getCSVFile(1,myid);
+	});
+	$('#world_genre_roll').on("click",function(){
+		var myid = $(this).attr("id");
+		getCSVFile(3,myid);
+	});
+	$('#scene_opening_roll').on("click",function(){
+		var myid = $(this).attr("id");
+		getCSVFile(4,myid);
+	});
+	$('#scene_ending_roll').on("click",function(){
+		var myid = $(this).attr("id");
+		getCSVFile(5,myid);
+	});
+
 	$('#save').on("click",function(){
 		var htmllist = 
 			["pl_skill_roll_1","pl_skill_roll_2","pl_skill_roll_3",
@@ -44,23 +71,23 @@ function getCSVFile(csvNO,myid) {
             xhr.send(null);
             break;
         case 1:
-            xhr.open("get","dic/Noun.csv", true);
+            xhr.open("get","dic/Noun.place.csv", true);
             xhr.send(null);
             break;
         case 2:
-            xhr.open("get","dic/Noun.csv", true);
+            xhr.open("get","dic/Time.csv", true);
             xhr.send(null);
             break;
         case 3:
-            xhr.open("get","dic/Noun.csv", true);
+            xhr.open("get","dic/Genre.csv", true);
             xhr.send(null);
             break;
         case 4:
-            xhr.open("get","dic/Noun.csv", true);
+            xhr.open("get","dic/Opening.csv", true);
             xhr.send(null);
             break;
         case 5:
-            xhr.open("get","dic/Noun.csv", true);
+            xhr.open("get","dic/Ending.csv", true);
             xhr.send(null);
             break;
         default:
@@ -75,15 +102,10 @@ function createXMLHttpRequest() {
 }
 
 function createArray(csvData,csvNO,myid) {
-    var tempArray = csvData.split("\n");
-    var csvArray = new Array();
+    var csvArray = csvData.split("\n");
     var textid = myid + "_text";
-    for(var i = 0; i<tempArray.length;i++){
-		csvArray[i] = tempArray[i].split(",");
-    }
-	var j = 0;
-	j = Math.floor( Math.random() * tempArray.length )
-	$('#'+textid).val(csvArray[j][0]);
+    var j = Math.floor( Math.random() * tempArray.length )
+    $('#'+textid).val(csvArray[j]);
 }
 
 function getAPI(text){
