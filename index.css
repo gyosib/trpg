@@ -2,12 +2,13 @@ html,body {
 	height:100%;
 	width: 100%;
 	margin: 0px;
+	background-color: #3498db;
 }
 
 .linkbtn {
 	display: inline-block;
 	width: 100%;
-	height: 40%;
+	height: 50%;
 	text-align: center;
 	text-decoration: none; /*ëïè¸*/
 	line-height: 54px;
@@ -37,8 +38,7 @@ p {
 }
 
 #gm {
-	background-color: #1f1f1f;
-	border: 5px solid #ffffff;
+	background-color: #c0392b;
 }
 #gm:active,
 #pl:active, {
@@ -49,8 +49,7 @@ p {
 	line-height: 160px;
 }		
 #pl {
-	background-color: #ffffff;
-	border: 5px solid #1f1f1f;
+	background-color: #f1c40f;
 }
 #pl p{
 	color: #1f1f1f;

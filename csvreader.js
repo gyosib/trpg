@@ -41,9 +41,8 @@ $(function(){
 
 	$('#save').on("click",function(){
 		var htmllist = 
-			["pl_skill_roll_1","pl_skill_roll_2","pl_skill_roll_3",
+			["pl_skill_roll_1","pl_skill_roll_2",
 			"pl_keyword_roll_1","pl_keyword_roll_2",
-			"pl_keyword_roll_3",
 			"pl_deathblow_roll","pl_other_roll",
 			"world_time_roll","world_place_roll","world_genre_roll",			"scene_opening_roll","scene_ending_roll",
 			"scene_keyword_roll_1","scene_keyword_roll_2",
@@ -57,6 +56,19 @@ $(function(){
 			}
 		});
 	});
+	var htmllist = 
+		["pl_skill_roll_1","pl_skill_roll_2","pl_skill_roll_3",
+		"pl_keyword_roll_1","pl_keyword_roll_2",
+		"pl_keyword_roll_3",
+		"pl_deathblow_roll","pl_other_roll",
+		"world_time_roll","world_place_roll","world_genre_roll",			"scene_opening_roll","scene_ending_roll",
+		"scene_keyword_roll_1","scene_keyword_roll_2",
+		"scene_keyword_roll_3"];
+	$.each(htmllist,function(index,val){
+		if($.cookie(val)){
+			$('#'+val+'_text').val($.cookie(val));
+		}
+	});
 });
 
 function getCSVFile(csvNO,myid) {
@@ -67,7 +79,12 @@ function getCSVFile(csvNO,myid) {
 	//使用するファイル名に変更する
     switch (csvNO) {
         case 0:
-            xhr.open("get","dic/Noun.csv", true);
+	    var rnd = Math.floor((Math.random()*2));
+	    if(rnd==0){
+            	xhr.open("get","dic/Noun.csv", true);
+            }else{
+            	xhr.open("get","dic/Noun.verbal.csv", true);
+            }
             xhr.send(null);
             break;
         case 1:
@@ -142,7 +159,7 @@ function getAPI(text){
 			Apprise(what,setting);
 		},
 		error: function(data){
-			what = "Wikipediaにはありませんでした";
+			what = text;
 			var setting = {
 				buttons: {
 				confirm: {
